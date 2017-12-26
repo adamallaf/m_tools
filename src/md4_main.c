@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <signal.h>
 #include <string.h>
-#include "m_md5.h"
 #include "m_md4.h"
 
 
@@ -36,9 +35,6 @@ int main(int argc, char *argv[])
             str[input_len - 1] = '\0';
             input_len--;
         }
-        md_str = m_MD5((const char **)&str);
-        fprintf(stdout, "%s\n", md_str);
-        free(md_str);
         md_str = m_MD4((const char **)&str);
         fprintf(stdout, "%s\n", md_str);
         free(md_str);

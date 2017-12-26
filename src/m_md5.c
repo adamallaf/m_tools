@@ -3,7 +3,7 @@
 
 char *m_MD5(const char **str){
     unsigned int i = 0;
-    char *mdString = (char *) malloc(34); // md5 is 32 length so 33 byte is needed ;)
+    char *mdString = (char *) malloc(34);
     unsigned char digest[MD5_DIGEST_LENGTH];
     MD5_CTX ctx;
     MD5_Init(&ctx);
