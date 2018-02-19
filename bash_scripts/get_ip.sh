@@ -1,2 +1,5 @@
 MYIP=$(ifconfig 2>/dev/null|awk '/inet addr:/ {print $2}'|sed 's/addr://')
-echo $MYIP | tail -c +11
+MPREFIX='127.0.0.1'
+MYIP=${MYIP##$MPREFIX}
+MYIP=${MYIP%%$MPREFIX}
+echo ${MYIP}
