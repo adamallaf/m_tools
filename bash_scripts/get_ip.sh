@@ -4,7 +4,7 @@ if [[ "$OSTYPE" == "linux-android" ]]; then
     MYIP=${MYIP##$MPREFIX}
     MYIP=${MYIP%%$MPREFIX}
     echo ${MYIP}
-elif [[ "$OSTYPE" == "linux-gnueabihf" ]]; then
+elif [[ "$OSTYPE" == "linux-gnueabihf" || "$OSTYPE" == "linux-gnu" ]]; then
     MYIP=$(networkctl status 2>/dev/null | grep Address)
     MPREFIX='^Address:'
     MPOSTFIX='on*'
