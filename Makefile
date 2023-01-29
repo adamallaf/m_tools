@@ -1,4 +1,4 @@
-#!/bin/env sh
+#!/usr/bin/make -f
 CC = gcc
 
 SRCDIR = src
@@ -25,11 +25,11 @@ all: dirs $(OBJS) $(OBJS1) $(OBJS2)
 	$(CC) $(CFLAGS) -c $< -o $(OBJDIR)/$@
 
 dirs:
-	+@[ -d ./$(OBJDIR)] || mkdir $(OBJDIR)
-	+@[ -d ./$(BINDIR)] || mkdir $(BINDIR)
+	+@mkdir -p $(OBJDIR)
+	+@mkdir -p $(BINDIR)
 
 clean:
 	@rm -rf $(OBJDIR)/* $(BINDIR)/$(OUT)
 
 fullclean: clean
-	@rm -rf $(BINDIR)/* 
+	@rm -rf $(BINDIR)/* $(OBJDIR) $(BINDIR)
